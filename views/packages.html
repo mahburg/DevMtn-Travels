@@ -1,6 +1,6 @@
-<section class="packages-main" ng-repeat="package in packages">
+<section class="packages-main" >
     <!-- This is where we need to repeat over our "packageInfo" data that we are getting from our controller. The controller is getting the data from the service. If you haven't made the controller do that now and include it on your state object in app.js-->
-    <section class="package-card">
+    <section class="package-card" ng-repeat="package in packages">
         <!--{{package}}-->
         <!-- Once we have the data we can use {{}} to bind that data to our view -->
         <!--Add the image link from the data here using ng-src. Remember to put something in the alt tag, perhaps the name of the city-->
@@ -13,6 +13,6 @@
 
          <!--You will need to make the ui-sref work. It should point to the booked state. If you look at your app.js the booked state
         is expecting an id to be passed along. You can get that id from the data object that we are repeating over. The syntax for going to a route with params is "routename({param:paramValue})" -->
-        <button ui-sref="booked(package: id)">Book Now</button>
+        <button ui-sref="booked({id: package.id})">Book Now</button>
     </section>
 </section>

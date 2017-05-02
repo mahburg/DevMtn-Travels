@@ -88,11 +88,21 @@ angular.module('devmtnTravel').service('mainSrv', function () {
 		return this.packageInfo;
 	}
 
-	this.packageById = function(id){
+	this.packageById = function(idIn){
 		for (let i = 0; i < this.packageInfo.length; i++){
-			if (packageInfo[i] == id){
-				return packageInfo[i];
+			if (this.packageInfo[i].id == idIn){
+				return this.packageInfo[i];
 			}
 		}
+	}
+
+	this.getLocByCountry = function (countryIn) {
+		let out = [];
+		for (let i = 0; i < this.packageInfo.length; i++){
+			if (this.packageInfo[i].country == countryIn){
+				out.push(this.packageInfo[i]);
+			}
+		}
+		return out;
 	}
 })
