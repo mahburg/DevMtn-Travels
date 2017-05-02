@@ -45,7 +45,11 @@
     font-size: 16px;
 
 }
-
+@media(min-width: 700px){
+        .package-card{
+            width: 50%;
+        }
+    }
 
 @media(min-width: 800px) {
     .packages-main {
@@ -82,8 +86,4 @@
     }
     
 }
-@media(min-width: 700px){
-        .package-card{
-            width: 50%;
-        }
-    }
+
